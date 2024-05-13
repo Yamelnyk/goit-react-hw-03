@@ -11,7 +11,7 @@ export default function App() {
     const addContact = (newContact) => {
         setContacts((prevContacts) => {
             return [...prevContacts, newContact];
-        })
+        });
     }
 
     const [filter, setFilter] = useState('');

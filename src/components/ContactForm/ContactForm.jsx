@@ -1,6 +1,7 @@
 import { Formik, Form, Field, ErrorMessage } from 'formik';
 import { useId } from 'react';
 import * as Yup from "yup";
+import { nanoid } from "nanoid";
 
 const ContactSchema = Yup.object().shape({
     username: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
@@ -14,10 +15,10 @@ export default function ContactForm({onAdd}) {
     const fieldId = useId();
 
     const handleSubmit = (values, actions) => {
-        onAdd(values);
-        // console.log(values);
+        onAdd({ id: nanoid(), ...values });
         actions.resetForm(); 
-     }
+    }
+    
     return (
         <Formik
             initialValues={{
