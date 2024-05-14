@@ -4,7 +4,7 @@ import * as Yup from "yup";
 import { nanoid } from "nanoid";
 
 const ContactSchema = Yup.object().shape({
-    username: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
+    name: Yup.string().min(3, "Too Short!").max(50, "Too Long!").required("Required"),
     number: Yup.string().min(9, "Too Short!").max(9, "Too Long!").required("Required"),
 });
 
@@ -22,7 +22,7 @@ export default function ContactForm({onAdd}) {
     return (
         <Formik
             initialValues={{
-                username: "",
+                name: "",
                 number: ""
             }}
             validationSchema={ContactSchema}
@@ -30,9 +30,9 @@ export default function ContactForm({onAdd}) {
         >
             <Form>
                 <div>
-                    <label htmlFor={`${fieldId}-username`}>Name</label>
-                    <Field name="username" id={`${fieldId}-username`}/>
-                    <ErrorMessage name="username" component="span"/>
+                    <label htmlFor={`${fieldId}-name`}>Name</label>
+                    <Field name="name" id={`${fieldId}-name`}/>
+                    <ErrorMessage name="name" component="span"/>
                 </div>
                 <div>
                     <label htmlFor={`${fieldId}-number`}>Number</label>
