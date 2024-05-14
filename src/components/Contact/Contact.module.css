@@ -1,0 +1,24 @@
+.contactGroup {
+    display: flex;
+    justify-content: space-between;
+    align-items: center;
+    min-width: 280px;
+    padding: 8px;
+    border: 1px solid black;
+    border-radius: 10px;
+}
+
+.list {
+    display: flex;
+    flex-direction: column;
+    gap: 10px;
+    list-style-type: none;
+}
+
+.svg {
+    margin-right: 8px;
+}
+
+.btn {
+    height:30px;
+}
